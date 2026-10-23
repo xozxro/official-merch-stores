@@ -1,0 +1,43 @@
+name: Add a store
+description: Suggest an official merch store for an artist or brand
+title: "Add store: "
+labels: ["store-request"]
+body:
+  - type: input
+    id: artist
+    attributes:
+      label: Artist or brand
+      placeholder: Artist name
+    validations:
+      required: true
+  - type: input
+    id: store
+    attributes:
+      label: Official store link
+      placeholder: https://store.example.com
+    validations:
+      required: true
+  - type: dropdown
+    id: region
+    attributes:
+      label: Region the store sells to
+      options:
+        - United States
+        - United Kingdom
+        - Europe
+        - Canada
+        - Australia
+        - Japan
+        - South Korea
+        - Global
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: proof
+    attributes:
+      label: Where the artist links to it
+      description: The artist's website or social profile that points to the store.
+      placeholder: https://
+    validations:
+      required: true
