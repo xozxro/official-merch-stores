@@ -7,7 +7,7 @@ Official online merch stores for 400+ artists and brands, with restock and drop 
 ## How to get restock alerts for any artist
 
 1. **Dropify app.** Open [app.dropify.cloud](https://app.dropify.cloud), follow an artist and get an alert when sold-out merch is back. Every brand has a free store, and you won't be asked for a card. All Access adds every other store.
-2. **Discord bot.** [Add the Dropify bot](https://dropify.cloud/discord-bot) to your server, run `/dropify setup` and pick a channel and up to three brands. It posts drops, restocks, price drops and sell-outs.
+2. **Discord bot.** [Add the Dropify bot](https://dropify.cloud/discord-bot) to your server, run `/dropify setup` and pick a channel and up to three brands, then add more with `/dropify add`, up to 25. It posts drops, restocks, price drops and sell-outs.
 3. **Artist page.** Every row below links to that artist's Dropify page, where you can turn on alerts.
 
 Alerts arrive in seconds with the product, its price and a link to the official store.
@@ -555,4 +555,4 @@ Missing a store? [Open an issue](../../issues/new?template=store-request.yml) wi
 
 ---
 
-Store data comes from the public [Dropify](https://dropify.cloud) API. Updated 2026-10-23. Rebuild with `node scripts/generate.mjs`. Data is CC0, the script is MIT.
+Store data comes from the public [Dropify](https://dropify.cloud) API. Updated 2026-10-24. Rebuild with `node scripts/generate.mjs`. Data is CC0, the script is MIT.
