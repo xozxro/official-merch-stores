@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-28",
   "source": "https://production.dropify.cloud/api/landing/brands",
   "brands": [
     {
@@ -6838,7 +6838,12 @@
           "region": "United States"
         }
       ],
-      "retailers": []
+      "retailers": [
+        {
+          "name": "Hot Topic",
+          "url": "https://www.hottopic.com/band-merch/shop-by-artist/the-who/"
+        }
+      ]
     },
     {
       "name": "The Wonder Years",
@@ -6899,7 +6904,12 @@
           "region": "United States"
         }
       ],
-      "retailers": []
+      "retailers": [
+        {
+          "name": "Hot Topic",
+          "url": "https://www.hottopic.com/band-merch/shop-by-artist/thrice/"
+        }
+      ]
     },
     {
       "name": "Tirzah",
@@ -7366,7 +7376,12 @@
           "region": "United States"
         }
       ],
-      "retailers": []
+      "retailers": [
+        {
+          "name": "Hot Topic",
+          "url": "https://www.hottopic.com/band-merch/shop-by-artist/white-chapel/"
+        }
+      ]
     },
     {
       "name": "Why Don't We",

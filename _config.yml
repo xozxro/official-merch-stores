@@ -1,0 +1,12 @@
+title: Official Merch Stores
+description: An open dataset of artist and brand merch shops. It lists hundreds of official stores across music, K-pop, streetwear, anime and more.
+theme: jekyll-theme-primer
+url: https://xozxro.github.io
+baseurl: /official-merch-stores
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - scripts
+  - TOPICS.txt
+  - LICENSE

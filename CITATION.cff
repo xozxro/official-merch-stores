@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Official Merch Stores"
+abstract: "An open dataset of artist and brand merch shops. It lists hundreds of official stores across music, K-pop, streetwear, anime and more, each with a restock alerts page."
+authors:
+  - name: "Dropify"
+    website: "https://dropify.cloud"
+repository-code: "https://github.com/xozxro/official-merch-stores"
+url: "https://xozxro.github.io/official-merch-stores/"
+license: CC0-1.0
+keywords:
+  - merch
+  - official merch
+  - dataset
+  - music
+  - K-pop
+  - streetwear
+  - restock alerts

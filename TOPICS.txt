@@ -1,12 +1,11 @@
 Description:
-Official merch stores for 400+ artists and brands, with restock and drop alerts for each.
+Official merch stores for hundreds of artists and brands, with restock and drop alerts for each.
 
 Topics:
 merch
 official-merch
 merch-store
 restock-alerts
-merch-drops
 merch-alerts
 band-merch
 kpop-merch
@@ -18,3 +17,8 @@ restock-bot
 awesome-list
 awesome
 dataset
+music
+kpop
+json
+csv
+dropify

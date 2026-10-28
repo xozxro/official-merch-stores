@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Rebuilds data/stores.json and README.md from Dropify's public API.
+// Rebuilds data/stores.json, data/stores.csv and README.md from Dropify's public API.
 // Usage: node scripts/generate.mjs [--check]   (--check prints the summary and writes nothing)
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -102,8 +102,28 @@ function esc(text) {
   return String(text).replace(/\\/g, '\\\\').replace(/([|*_`<>[\]])/g, '\\$1');
 }
 
-function roundedFloor(n) {
-  return `${Math.floor(n / 100) * 100}+`;
+function csvCell(v) {
+  const t = String(v ?? '');
+  return /[",\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
+}
+
+function csv(data) {
+  const rows = [['artist', 'slug', 'category', 'type', 'store_name', 'store_url', 'region', 'alerts_url']];
+  for (const b of data) {
+    for (const s of b.officialStores) rows.push([b.name, b.slug, b.category, 'official', s.name, s.url, s.region, b.alerts]);
+    for (const r of b.retailers) rows.push([b.name, b.slug, b.category, 'retailer', r.name, r.url, '', b.alerts]);
+  }
+  return rows.map((r) => r.map(csvCell).join(',')).join('\n') + '\n';
+}
+
+// Largest categories first, "other" last.
+function categoryGroups(list) {
+  const groups = new Map();
+  for (const b of list) {
+    if (!groups.has(b.category)) groups.set(b.category, []);
+    groups.get(b.category).push(b);
+  }
+  return [...groups.entries()].sort((a, b) => (a[0] === 'other') - (b[0] === 'other') || b[1].length - a[1].length || a[0].localeCompare(b[0]));
 }
 
 async function build() {
@@ -161,19 +181,21 @@ function retailerCell(list) {
   return list.map((r) => `[${esc(r.name)}](${r.url})`).join('<br>') || '';
 }
 
-function readme(data, updated) {
+function readme(data) {
   const withStore = data.filter((b) => b.officialStores.length);
   const retailerOnly = data.filter((b) => !b.officialStores.length);
-  const n = roundedFloor(withStore.length);
+  const year = new Date().getUTCFullYear();
 
   const lines = [];
   const p = (s = '') => lines.push(s);
 
   p('# Official Merch Stores');
   p();
-  p(`Official online merch stores for ${n} artists and brands, with restock and drop alerts for each.`);
+  p('Official Merch Stores is an open dataset of artist and brand merch shops. It lists hundreds of official stores across music, K-pop, streetwear, anime and more. Each entry links to the store and a restock alerts page. Data comes as JSON and CSV, free to reuse under CC0.');
   p();
-  p('[Get alerts](#how-to-get-restock-alerts-for-any-artist) | [Find a store](#official-merch-stores-a-to-z) | [Retailers](#sold-at-retailers) | [FAQ](#faq)');
+  p('**Restock alerts:** get them for any store at [dropify.cloud](https://dropify.cloud). Seamless shopping. Instant product alerts.');
+  p();
+  p('[Get alerts](#how-to-get-restock-alerts-for-any-artist) | [By category](#browse-by-category) | [A to Z](#official-merch-stores-a-to-z) | [Retailers](#sold-at-retailers) | [Data](#data-dictionary) | [FAQ](#faq) | [Cite](#how-to-cite)');
   p();
   p('## How to get restock alerts for any artist');
   p();
@@ -183,6 +205,18 @@ function readme(data, updated) {
   p();
   p('Alerts arrive in seconds with the product, its price and a link to the official store.');
   p();
+  p('## Browse by category');
+  p();
+  for (const [cat, list] of categoryGroups(withStore)) {
+    p(`### ${CATEGORY_LABELS[cat] || 'Other'}`);
+    p();
+    p('| Artist | Official store | Alerts |');
+    p('| --- | --- | --- |');
+    for (const b of list) {
+      p(`| ${esc(b.name)} | ${storeCell(b.officialStores)} | [Restock alerts](${b.alerts}) |`);
+    }
+    p();
+  }
   p('## Official merch stores A to Z');
   p();
   p('Retailers like Hot Topic carry merch but are not the artist\'s own store. They sit in their own column.');
@@ -205,6 +239,22 @@ function readme(data, updated) {
     }
     p();
   }
+  p('## Data dictionary');
+  p();
+  p('Files: `data/stores.json` and `data/stores.csv`. Both hold the same stores.');
+  p();
+  p('| Field | Type | Meaning |');
+  p('| --- | --- | --- |');
+  p('| `name` / `artist` | string | Artist or brand name |');
+  p('| `slug` | string | URL key, matches the Dropify brand page |');
+  p('| `category` | string | One of: ' + [...new Set(data.map((b) => b.category))].sort().map((c) => `\`${c}\``).join(', ') + ' |');
+  p('| `alerts` / `alerts_url` | URL | Dropify restock alerts page for the brand |');
+  p('| `officialStores[]` | array | Official stores: `name`, `url`, `region` |');
+  p('| `retailers[]` | array | Retailers carrying the brand: `name`, `url` |');
+  p('| `region` | string | Store region, such as United States or Europe |');
+  p('| `type` (CSV) | string | `official` or `retailer` |');
+  p('| `store_name`, `store_url` (CSV) | string, URL | One store per row |');
+  p();
   p('## FAQ');
   p();
   p('### How do I know when merch restocks?');
@@ -223,13 +273,34 @@ function readme(data, updated) {
   p();
   p('Start from this list or the artist\'s own website and social profiles. Be wary of shops reached through ads, where the domain has the artist\'s name plus extra words or an odd ending. Heavy discounts on sold-out items are a red flag. Pay by card or PayPal so you can dispute a charge.');
   p();
+  p('## How to cite');
+  p();
+  p('Dropify. *Official Merch Stores* (dataset). GitHub. https://github.com/xozxro/official-merch-stores');
+  p();
+  p('```bibtex');
+  p('@misc{dropify_official_merch_stores,');
+  p('  title        = {Official Merch Stores},');
+  p('  author       = {Dropify},');
+  p(`  year         = {${year}},`);
+  p('  howpublished = {\\url{https://github.com/xozxro/official-merch-stores}}');
+  p('}');
+  p('```');
+  p();
+  p('GitHub shows a **Cite this repository** button from `CITATION.cff`.');
+  p();
+  p('## License');
+  p();
+  p('Data: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Use it freely, no credit needed.');
+  p();
+  p('Code in `scripts/`: MIT.');
+  p();
   p('## Contributing');
   p();
-  p('Missing a store? [Open an issue](../../issues/new?template=store-request.yml) with the artist and the official store link.');
+  p('Missing a store? [Open an issue](https://github.com/xozxro/official-merch-stores/issues/new?template=store-request.yml) with the artist and the official store link.');
   p();
   p('---');
   p();
-  p(`Store data comes from the public [Dropify](https://dropify.cloud) API. Updated ${updated}. Rebuild with \`node scripts/generate.mjs\`. Data is CC0, the script is MIT.`);
+  p('Maintained by [Dropify](https://dropify.cloud). Rebuild with `node scripts/generate.mjs`.');
   p();
   return lines.join('\n');
 }
@@ -243,5 +314,6 @@ console.log(`brands=${data.length} withOfficialStore=${data.filter((b) => b.offi
 if (!CHECK) {
   await mkdir(path.join(ROOT, 'data'), { recursive: true });
   await writeFile(path.join(ROOT, 'data', 'stores.json'), JSON.stringify({ updated, source: `${API}/api/landing/brands`, brands: data }, null, 2) + '\n');
-  await writeFile(path.join(ROOT, 'README.md'), readme(data, updated));
+  await writeFile(path.join(ROOT, 'data', 'stores.csv'), csv(data));
+  await writeFile(path.join(ROOT, 'README.md'), readme(data));
 }
