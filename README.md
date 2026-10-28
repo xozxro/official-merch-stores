@@ -1,22 +1,28 @@
 # Official Merch Stores
 
-Official Merch Stores is an open dataset of artist and brand merch shops. It lists hundreds of official stores across music, K-pop, streetwear, anime and more. Each entry links to the store and a restock alerts page. Data comes as JSON and CSV, free to reuse under CC0.
+Official Merch Stores is an open dataset of artist and brand merch shops.
+It lists hundreds of official stores across music, K-pop, streetwear, anime and more.
+Each entry links to the store and a restock alerts page.
+Data comes as JSON and CSV, free to reuse under CC0.
 
-**Restock alerts:** get them for any store at [dropify.cloud](https://dropify.cloud). Seamless shopping. Instant product alerts.
+**Restock alerts:** get them for any store at [dropify.cloud](https://dropify.cloud).
+Seamless shopping. Instant product alerts.
 
-[Get alerts](#how-to-get-restock-alerts-for-any-artist) | [By category](#browse-by-category) | [A to Z](#official-merch-stores-a-to-z) | [Retailers](#sold-at-retailers) | [Data](#data-dictionary) | [FAQ](#faq) | [Cite](#how-to-cite)
+[Get alerts](#get-restock-alerts) | [By category](#browse-by-category) | [A to Z](#official-merch-stores-a-to-z) | [Retailers](#sold-at-retailers) | [Data](#data-dictionary) | [Questions](#common-questions) | [Cite](#how-to-cite)
 
-## How to get restock alerts for any artist
+## Get restock alerts
 
-1. **Dropify app.** Open [app.dropify.cloud](https://app.dropify.cloud), follow an artist and get an alert when sold-out merch is back. Every brand has a free store, and you won't be asked for a card. All Access adds every other store.
-2. **Discord bot.** [Add the Dropify bot](https://dropify.cloud/discord-bot) to your server, run `/dropify setup` and pick a channel and up to three brands, then add more with `/dropify add`, up to 25. It posts drops, restocks, price drops and sell-outs.
-3. **Artist page.** Every row below links to that artist's Dropify page, where you can turn on alerts.
+1. **Dropify app.** Open [app.dropify.cloud](https://app.dropify.cloud) and follow an artist.
+   You get an alert when sold-out merch is back.
+2. **Discord bot.** [Add the Dropify bot](https://dropify.cloud/discord-bot) and run `/dropify setup` in your server.
+3. **Artist page.** Every row below links to that artist's Dropify page.
+   Turn on alerts there.
 
-Alerts arrive in seconds with the product, its price and a link to the official store.
+Each alert has the product, its price and a link to the official store.
 
 ## Browse by category
 
-### Music
+### Music merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -275,7 +281,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | YUNGBLUD | [yungbludstore.com](https://yungbludstore.com/) | [Restock alerts](https://dropify.cloud/brand/yungblud) |
 | Zach Bryan | [store.zachbryan.com](https://store.zachbryan.com/) | [Restock alerts](https://dropify.cloud/brand/zach-bryan) |
 
-### Streetwear
+### Streetwear merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -318,7 +324,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Welcome Skateboards | [welcomeskateboards.com](https://welcomeskateboards.com/) | [Restock alerts](https://dropify.cloud/brand/welcome-skateboards) |
 | WTAPS | [wtaps.com](https://www.wtaps.com/) | [Restock alerts](https://dropify.cloud/brand/wtaps) |
 
-### K-pop
+### K-pop merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -349,7 +355,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | TXT | [shoptxtofficial.com](https://shoptxtofficial.com/) | [Restock alerts](https://dropify.cloud/brand/txt) |
 | xikers | [en.kqshop.kr](https://en.kqshop.kr/category/xikers/66/) | [Restock alerts](https://dropify.cloud/brand/xikers) |
 
-### Outdoor
+### Outdoor merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -369,7 +375,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Topo Designs | [topodesigns.com](https://www.topodesigns.com/) | [Restock alerts](https://dropify.cloud/brand/topo-designs) |
 | Tracksmith | [checkout.tracksmith.com](https://checkout.tracksmith.com/) | [Restock alerts](https://dropify.cloud/brand/tracksmith) |
 
-### Tech
+### Tech merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -386,7 +392,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | WANDRD | [wandrd.com](https://wandrd.com/) | [Restock alerts](https://dropify.cloud/brand/wandrd) |
 | Wuque Studio | [wuquestudio.com](https://wuquestudio.com/) | [Restock alerts](https://dropify.cloud/brand/wuque-studio) |
 
-### Food
+### Food merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -401,7 +407,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Weber Workshops | [weberworkshops.com](https://weberworkshops.com/) | [Restock alerts](https://dropify.cloud/brand/weber-workshops) |
 | Yellowbird | [yellowbirdsauce.com](https://yellowbirdsauce.com/) | [Restock alerts](https://dropify.cloud/brand/yellowbird) |
 
-### Beauty
+### Beauty merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -415,7 +421,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Rare Beauty | [rarebeauty.com](https://www.rarebeauty.com/) | [Restock alerts](https://dropify.cloud/brand/rare-beauty) |
 | Rhode | [rhodeskin.com](https://www.rhodeskin.com/) | [Restock alerts](https://dropify.cloud/brand/rhode) |
 
-### Gear
+### Gear merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -429,7 +435,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Meze Audio | [mezeaudio.com](https://www.mezeaudio.com/) | [Restock alerts](https://dropify.cloud/brand/meze-audio) |
 | Niche Coffee | [nichecoffee.co.uk](https://www.nichecoffee.co.uk/) | [Restock alerts](https://dropify.cloud/brand/niche-coffee) |
 
-### Sneakers
+### Sneakers merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -442,7 +448,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Slam Jam | [slamjam.com](https://www.slamjam.com/) | [Restock alerts](https://dropify.cloud/brand/slam-jam) |
 | Sneakersnstuff (SNS) | [sneakersnstuff.com](https://www.sneakersnstuff.com/) | [Restock alerts](https://dropify.cloud/brand/sneakersnstuff-sns) |
 
-### Sports
+### Sports merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -454,7 +460,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Real Madrid Shop | [us.shop.realmadrid.com](https://us.shop.realmadrid.com/) | [Restock alerts](https://dropify.cloud/brand/real-madrid-shop) |
 | Red Bull Shop US | [redbullshopus.com](https://www.redbullshopus.com/) | [Restock alerts](https://dropify.cloud/brand/red-bull-shop-us) |
 
-### Cars
+### Cars merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -465,7 +471,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Hoonigan | [hoonigan.com](https://www.hoonigan.com/) | [Restock alerts](https://dropify.cloud/brand/hoonigan) |
 | Liberty Walk EU | [libertywalk-eu.com](https://libertywalk-eu.com/) | [Restock alerts](https://dropify.cloud/brand/liberty-walk-eu) |
 
-### Gaming
+### Gaming merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -476,7 +482,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | SMII7Y | [smii7y.store](https://smii7y.store/) | [Restock alerts](https://dropify.cloud/brand/smii7y) |
 | Xbox Gear Shop | [shop.xboxgamestudios.com](https://shop.xboxgamestudios.com/) | [Restock alerts](https://dropify.cloud/brand/xbox-gear-shop) |
 
-### Vinyl
+### Vinyl merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -487,7 +493,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Third Man Records | [thirdmanstore.com](https://www.thirdmanstore.com/) | [Restock alerts](https://dropify.cloud/brand/third-man-records) |
 | Waxwork Records | [waxworkrecords.com](https://waxworkrecords.com/) | [Restock alerts](https://dropify.cloud/brand/waxwork-records) |
 
-### Watches
+### Watches merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -498,7 +504,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Hodinkee Shop | [shop.hodinkee.com](https://shop.hodinkee.com/) | [Restock alerts](https://dropify.cloud/brand/hodinkee-shop) |
 | Yema | [yema.us](https://yema.us/) | [Restock alerts](https://dropify.cloud/brand/yema) |
 
-### Art prints
+### Art prints merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -508,7 +514,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Mondo Shop | [mondoshop.com](https://mondoshop.com/) | [Restock alerts](https://dropify.cloud/brand/mondo-shop) |
 | Vice Press | [vice-press.com](https://vice-press.com/) | [Restock alerts](https://dropify.cloud/brand/vice-press) |
 
-### Toys
+### Toys merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -518,7 +524,7 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Strangecat Toys | [strangecattoys.com](https://strangecattoys.com/) | [Restock alerts](https://dropify.cloud/brand/strangecat-toys) |
 | Super7 | [super7.com](https://super7.com/) | [Restock alerts](https://dropify.cloud/brand/super7) |
 
-### Books
+### Books merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -527,14 +533,14 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 | Suntup Editions | [shop.suntup.press](https://shop.suntup.press/) | [Restock alerts](https://dropify.cloud/brand/suntup-editions) |
 | The Broken Binding | [thebrokenbinding.co.uk](https://thebrokenbinding.co.uk/) | [Restock alerts](https://dropify.cloud/brand/the-broken-binding) |
 
-### Anime
+### Anime merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
 | Shonen Jump Store | [shonenjumpstore.com](https://shonenjumpstore.com/) | [Restock alerts](https://dropify.cloud/brand/shonen-jump-store) |
 | TOHO Animation Store | [tohoanimationstore.us](https://tohoanimationstore.us/) | [Restock alerts](https://dropify.cloud/brand/toho-animation-store) |
 
-### Other
+### Other merch
 
 | Artist | Official store | Alerts |
 | --- | --- | --- |
@@ -548,7 +554,8 @@ Alerts arrive in seconds with the product, its price and a link to the official 
 
 ## Official merch stores A to Z
 
-Retailers like Hot Topic carry merch but are not the artist's own store. They sit in their own column.
+Retailers like Hot Topic carry merch but are not the artist's own store.
+They sit in their own column.
 
 | Artist | Category | Official store | Region | Retailer | Alerts |
 | --- | --- | --- | --- | --- | --- |
@@ -1081,23 +1088,37 @@ Files: `data/stores.json` and `data/stores.csv`. Both hold the same stores.
 | `type` (CSV) | string | `official` or `retailer` |
 | `store_name`, `store_url` (CSV) | string, URL | One store per row |
 
-## FAQ
+## Common questions
 
-### How do I know when merch restocks?
+### When does merch restock?
 
-Follow the artist on [Dropify](https://app.dropify.cloud). It compares each official store with its last read. When a sold-out product is back, you get an alert with the product, its price and the store link. Find the artist in the table above and open their alerts page.
+Follow the artist on [Dropify](https://app.dropify.cloud).
+Dropify checks each official store for changes.
+When sold-out merch is back, you get an alert.
+It has the product, its price and the store link.
+Find the artist in the table above and open their alerts page.
 
-### Is there a Discord bot for merch restocks?
+### Is there a Discord bot?
 
-Yes. The [Dropify bot](https://dropify.cloud/discord-bot) posts new drops, restocks, price drops and sell-outs in your server. Run `/dropify setup` to pick the channel, up to three brands and which alerts post. Add more with `/dropify add`, up to 25. It never mentions @everyone, a role or a member.
+Yes, the [Dropify bot](https://dropify.cloud/discord-bot) posts drops, restocks, price drops and sell-outs.
+Run `/dropify setup` to pick a channel and up to three brands.
+Add more with `/dropify add`, up to 25.
+It never mentions @everyone, a role or a member.
 
-### How do I find an artist's official merch store?
+### Finding an official store
 
-Search this page for the artist's name. The Official store column links straight to it. You can also open the artist's official website and follow its shop link. Dropify sells nothing, so every link goes to the store itself.
+Search this page for the artist's name.
+The Official store column links straight to it.
+You can also open the artist's official website and follow its shop link.
+Dropify sells nothing, so every link goes to the store itself.
 
-### How do I avoid fake merch stores?
+### Avoiding fake merch stores
 
-Start from this list or the artist's own website and social profiles. Be wary of shops reached through ads, where the domain has the artist's name plus extra words or an odd ending. Heavy discounts on sold-out items are a red flag. Pay by card or PayPal so you can dispute a charge.
+Start from this list or the artist's own website and social profiles.
+Be wary of shops reached through ads.
+Watch for domains with the artist's name plus extra words, or an odd ending.
+Heavy discounts on sold-out items are a red flag.
+Pay by card or PayPal so you can dispute a charge.
 
 ## How to cite
 
@@ -1114,13 +1135,13 @@ Dropify. *Official Merch Stores* (dataset). GitHub. https://github.com/xozxro/of
 
 GitHub shows a **Cite this repository** button from `CITATION.cff`.
 
-## License
+## License and use
 
 Data: [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Use it freely, no credit needed.
 
 Code in `scripts/`: MIT.
 
-## Contributing
+## Add a missing store
 
 Missing a store? [Open an issue](https://github.com/xozxro/official-merch-stores/issues/new?template=store-request.yml) with the artist and the official store link.
 
